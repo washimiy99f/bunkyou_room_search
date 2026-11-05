@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "文京区 施設予約ねっと 部屋まとめ表示補助",
+  "description": "指定日・指定部屋の時間帯別空き状況画面まで、公式サイトの通常手順に沿って選択を進めます。予約・ログインは行いません。",
+  "version": "0.1.0",
+  "minimum_chrome_version": "114",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "部屋まとめ表示",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.shisetsu.city.bunkyo.lg.jp/user/*"
+      ],
+      "js": [
+        "src/rooms.js",
+        "src/lib.js",
+        "src/timeview.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

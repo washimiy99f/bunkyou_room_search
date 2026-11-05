@@ -1,0 +1,9 @@
+{
+  "name": "bunkyo-room-helper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "文京区「文の京」施設予約ねっと 部屋まとめ表示補助（Chrome拡張）",
+  "scripts": {
+    "test": "node --test tests/lib.test.js"
+  }
+}

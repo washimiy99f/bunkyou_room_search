@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>部屋まとめ表示</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <h1>部屋まとめ表示</h1>
+
+    <label class="date">
+      <span>利用日</span>
+      <input type="date" id="date" required>
+    </label>
+
+    <div class="bar">
+      <button type="button" id="selectAll">全選択</button>
+      <button type="button" id="clearAll">全解除</button>
+      <span id="count" aria-live="polite"></span>
+    </div>
+
+    <form id="rooms" aria-label="対象部屋"></form>
+
+    <div class="actions">
+      <p id="validation" class="validation" role="alert"></p>
+      <button type="button" id="run" class="run">公式サイトで表示</button>
+      <section id="status" class="status" hidden aria-live="polite">
+        <div class="status-title"></div>
+        <div class="status-msg"></div>
+        <button type="button" id="cancel" hidden>中止</button>
+      </section>
+      <p class="note">公式サイトの通常の検索手順を自動で進めます。時間帯の選択・ログイン・申込は行いません。</p>
+    </div>
+  </main>
+  <script src="../src/rooms.js"></script>
+  <script src="../src/lib.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
